@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require scrollreveal
+//= require jquery_magnific_popup
 //= require turbolinks
 //= require_tree .
+//= require creative
