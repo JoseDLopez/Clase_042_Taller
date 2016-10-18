@@ -1,24 +1,32 @@
 <h1 class="text-uppercase text-center">Jose Daniel Lopez</h1>
 <p>Bienvenido, registrate</p>
 
-
+<%= params %>
 <div class="row">
 	<div class="col-xs-6 col-xs-offset-3">
-		<form>
+		<form method="" action="<%= pages_guardar_cliente_path %>">
 		  <div class="form-group">
 		    <label for="nombre_completo">Introduzca su numbre:</label>
-		    <input type="text" class="form-control" id="nombre_completo" placeholder="Nombre">
+		    <input type="text" class="form-control" name="nombre_completo" id="nombre_completo" placeholder="Nombre" >
 		  </div>
 		  <div class="form-group">
 		    <label for="correo_electronico">Email:</label>
-		    <input type="email" class="form-control" id="correo_electronico" placeholder="example@correo.com">
+		    <input type="email" class="form-control" name ="correo_electronico" id="correo_electronico" placeholder="example@correo.com">
 		  </div>
 		  <div class="form-group">
 		    <label for="edad_usuario">Introduzca la edad:</label>
-		    <input type="number" value="18" id="edad_usuario" min="10" max="70" >
+		    <input type="number" value="18" name="edad_usuario" id="edad_usuario" min="10" max="70" >
 		  </div>
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
 </div>
+
+<% @clientes.each do |u| %>
+	<p><%= u.id %> <%= u.name %> <%= u.edad %> <%= u.email %></p>
+<!-- 	<p><%= u.name %></p>
+	<p><%= u.edad %></p>
+	<p><%= u.created_at %></p> -->
+	<p>_______________________</p>
+<% end -%>
 
