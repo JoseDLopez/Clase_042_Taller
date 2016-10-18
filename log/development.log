@@ -38144,3 +38144,11 @@ Started GET "/pages/index" for ::1 at 2016-10-18 04:01:44 -0300
 Processing by PagesController#index as HTML
   Rendered pages/index.html.erb within layouts/application (74.3ms)
 Completed 200 OK in 94ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/home" for ::1 at 2016-10-18 04:03:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mClient Load (0.3ms)[0m  SELECT "clients".* FROM "clients"
+  Rendered pages/home.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 497ms (Views: 459.8ms | ActiveRecord: 0.7ms)
