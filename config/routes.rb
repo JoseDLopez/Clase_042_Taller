@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'pages/guardar_cliente'
 
-  get 'pages/guardar_auto'
+  post 'pages/guardar_auto'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
