@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017234140) do
+ActiveRecord::Schema.define(version: 20161018051313) do
+
+  create_table "autos", force: :cascade do |t|
+    t.string   "modelo"
+    t.string   "marca"
+    t.integer  "km"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"

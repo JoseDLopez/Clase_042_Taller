@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def x
+    @aut = Auto.all
   end
 
   def guardar_cliente
@@ -20,13 +21,29 @@ class PagesController < ApplicationController
     @correo_electronico = params[:correo_electronico]
     @edad_usuario = params[:edad_usuario]
 
-    Client.create({
-      name: @nombre_completo,
-      email: @correo_electronico,
-      edad: @edad_usuario
+    unless @nombre_completo.blank?
+      Client.create({
+        name: @nombre_completo,
+        email: @correo_electronico,
+        edad: @edad_usuario
       })
+    end
 
     redirect_to pages_home_path
+  end
+
+  def guardar_auto
+    @modelo = params[:modelo]
+    @marca = params[:marca]
+    @kilometros = params[:kilometros]
+      unless @modelo.blank?
+      Auto.create({
+        modelo: @modelo,
+        marca: @marca,
+        km: @kilometros
+      })
+    end
+    redirect_to pages_x_path
   end
 
 
